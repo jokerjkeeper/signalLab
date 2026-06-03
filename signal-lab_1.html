@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal Lab — AI 項目情報站</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+  :root {
+    --bg: #f4f3ef;
+    --surface: #ffffff;
+    --surface2: #f9f8f5;
+    --border: #e2e0d8;
+    --border2: #ccc9be;
+    --text: #1a1916;
+    --muted: #8a8778;
+    --accent: #1a7a4a;
+    --accent-light: #e8f5ee;
+    --accent2: #5b3db8;
+    --accent2-light: #eeebfa;
+    --accent3: #c05a10;
+    --accent3-light: #fdf0e6;
+    --red: #c0392b;
+    --red-light: #fdecea;
+    --yellow: #92700a;
+    --yellow-light: #fdf6e3;
+    --shadow: 0 1px 4px rgba(0,0,0,0.07), 0 0 0 1px var(--border);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(26,122,74,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,122,74,0.04) 1px, transparent 1px);
+    background-size: 36px 36px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+  /* HEADER */
+  header {
+    padding: 32px 0 22px;
+    border-bottom: 1px solid var(--border2);
+    margin-bottom: 24px;
+  }
+  .header-inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--accent);
+  }
+  .logo span { color: var(--muted); font-weight: 400; }
+  .tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-top: 5px;
+  }
+  .header-stats { display: flex; gap: 28px; align-items: center; }
+  .stat { text-align: right; }
+  .stat-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 1px; }
+
+  /* CONTROLS */
+  .controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 5px 13px;
+    border-radius: 20px;
+    border: 1px solid var(--border2);
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.04em;
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+  .filter-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-light); font-weight: 500; }
+  .filter-btn.active-2 { border-color: var(--accent2); color: var(--accent2); background: var(--accent2-light); font-weight: 500; }
+  .filter-btn.active-3 { border-color: var(--accent3); color: var(--accent3); background: var(--accent3-light); font-weight: 500; }
+
+  .spacer { flex: 1; }
+  .add-btn {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 18px;
+    border-radius: 20px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    letter-spacing: 0.01em;
+  }
+  .add-btn:hover { opacity: 0.85; }
+
+  /* TABLE HEAD */
+  .table-head {
+    display: grid;
+    grid-template-columns: 2fr 90px 90px 80px 1fr 130px;
+    gap: 8px;
+    padding: 7px 14px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border2);
+    margin-bottom: 6px;
+  }
+
+  /* PROJECT CARD */
+  .project-card {
+    display: grid;
+    grid-template-columns: 2fr 90px 90px 80px 1fr 130px;
+    gap: 8px;
+    align-items: center;
+    padding: 13px 14px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.15s, transform 0.1s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--tag-color, var(--border2));
+    border-radius: 8px 0 0 8px;
+  }
+  .project-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1), 0 0 0 1px var(--tag-color, var(--border2));
+    transform: translateY(-1px);
+  }
+
+  .proj-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .proj-meta {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .tag-edu   { background: var(--yellow-light);  color: var(--yellow);  }
+  .tag-infra { background: var(--accent2-light); color: var(--accent2); }
+  .tag-legal { background: var(--accent-light);  color: var(--accent);  }
+  .tag-health{ background: var(--accent3-light); color: var(--accent3); }
+  .tag-data  { background: var(--red-light);     color: var(--red);     }
+  .tag-tool  { background: #f0eeea;              color: var(--muted);   }
+
+  .source-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* SCORE BAR */
+  .score-wrap { display: flex; align-items: center; gap: 6px; }
+  .score-bar-bg { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .score-bar-fill { height: 100%; border-radius: 2px; background: var(--bar-color, var(--accent)); transition: width 0.6s ease; }
+  .score-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--bar-color, var(--accent));
+    width: 24px;
+    text-align: right;
+  }
+
+  /* SIGNAL DOTS */
+  .signal { display: flex; gap: 3px; align-items: center; }
+  .signal-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border2); }
+  .signal-dot.on  { background: var(--accent); }
+  .signal-dot.on-2{ background: var(--accent2); }
+  .signal-dot.on-3{ background: var(--accent3); }
+
+  /* RELEVANCE */
+  .relevance-wrap { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+  .rel-tag { font-size: 10px; font-family: 'DM Mono', monospace; padding: 2px 6px; border-radius: 3px; border: 1px solid; font-weight: 500; }
+  .rel-2   { border-color: rgba(146,112,10,0.35); color: var(--yellow); background: var(--yellow-light); }
+  .rel-5   { border-color: rgba(26,122,74,0.35);  color: var(--accent); background: var(--accent-light); }
+
+  /* LINK BUTTON */
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 4px 9px;
+    border-radius: 4px;
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--muted);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .link-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+  .link-btn svg { flex-shrink: 0; }
+
+  /* INSIGHT BAR */
+  .insight-bar {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    padding: 11px 16px;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow);
+  }
+  .insight-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--accent); white-space: nowrap; font-weight: 500; }
+  .insight-text  { font-size: 12px; color: var(--muted); flex: 1; }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(244,243,239,0.7);
+    z-index: 100;
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    padding: 28px;
+    width: min(600px, 94vw);
+    max-height: 82vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+  .modal h2 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 5px; color: var(--text); }
+  .modal-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 18px; }
+  .modal-section { margin-bottom: 16px; }
+  .modal-section-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; }
+  .modal-body { font-size: 13px; line-height: 1.75; color: #3a3830; }
+  .modal-close { position: absolute; top: 16px; right: 18px; background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; line-height: 1; }
+  .modal-close:hover { color: var(--text); }
+
+  .modal-url-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .modal-url-btn:hover { background: var(--accent-light); border-color: var(--accent); }
+
+  .analyze-btn {
+    margin-top: 18px;
+    width: 100%;
+    padding: 10px;
+    background: var(--accent-light);
+    border: 1px solid rgba(26,122,74,0.3);
+    border-radius: 7px;
+    color: var(--accent);
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .analyze-btn:hover { background: #d4eddf; }
+  .analyze-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .ai-output {
+    margin-top: 12px;
+    padding: 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #3a3830;
+    white-space: pre-wrap;
+    min-height: 40px;
+  }
+  .thinking { color: var(--muted); font-style: italic; font-family: 'DM Mono', monospace; font-size: 11px; }
+
+  /* ADD FORM */
+  .form-group { margin-bottom: 13px; }
+  .form-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 5px; display: block; letter-spacing: 0.06em; text-transform: uppercase; }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    padding: 8px 10px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent); background: var(--surface); }
+  .form-textarea { min-height: 76px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--accent);
+    border: none;
+    border-radius: 7px;
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: opacity 0.15s;
+  }
+  .submit-btn:hover { opacity: 0.88; }
+
+  .empty { text-align: center; padding: 48px 16px; color: var(--muted); font-family: 'DM Mono', monospace; font-size: 12px; }
+
+  @media (max-width: 640px) {
+    .table-head { display: none; }
+    .project-card { grid-template-columns: 1fr; gap: 6px; }
+    .header-stats { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="header-inner">
+      <div>
+        <div class="logo">Signal Lab <span>/ 項目情報站</span></div>
+        <div class="tagline">CROWDFUNDING · INVESTMENT · EMERGING AI · WEEKLY SCAN</div>
+      </div>
+      <div class="header-stats">
+        <div class="stat">
+          <div class="stat-val" id="total-count">0</div>
+          <div class="stat-label">追蹤項目</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val" id="high-signal-count">0</div>
+          <div class="stat-label">高信號</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val" id="avg-score">—</div>
+          <div class="stat-label">平均分</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="insight-bar">
+    <div class="insight-label">→ 本週信號</div>
+    <div class="insight-text" id="weekly-insight">點擊「新增項目」開始追蹤，或點擊任意項目讓 AI 深度分析其②教育 或 ⑤決策整合 相關性。</div>
+  </div>
+
+  <div class="controls">
+    <button class="filter-btn active" onclick="setFilter('all', this)">ALL</button>
+    <button class="filter-btn" onclick="setFilter('edu', this)">② 教育</button>
+    <button class="filter-btn" onclick="setFilter('decision', this)">⑤ 決策整合</button>
+    <button class="filter-btn" onclick="setFilter('infra', this)">基礎設施</button>
+    <button class="filter-btn" onclick="setFilter('high', this)">高信號 ★</button>
+    <div class="spacer"></div>
+    <button class="add-btn" onclick="openAddModal()">＋ 新增項目</button>
+  </div>
+
+  <div class="table-head">
+    <div>項目</div>
+    <div>來源</div>
+    <div>類別</div>
+    <div>信號強度</div>
+    <div>相關方向</div>
+    <div>AI評分</div>
+  </div>
+
+  <div id="project-list"></div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="detail-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('detail-modal')">×</button>
+    <h2 id="modal-title">—</h2>
+    <div class="modal-meta" id="modal-meta">—</div>
+
+    <div id="modal-url-section" style="margin-bottom:14px;display:none">
+      <a class="modal-url-btn" id="modal-url-link" href="#" target="_blank" rel="noopener">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7 1h4v4M11 1L5.5 6.5M4 2H2a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        前往官網
+      </a>
+    </div>
+
+    <div class="modal-section">
+      <div class="modal-section-title">項目描述</div>
+      <div class="modal-body" id="modal-desc">—</div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">你的備註</div>
+      <div class="modal-body" id="modal-notes">—</div>
+    </div>
+
+    <button class="analyze-btn" id="analyze-btn" onclick="runAnalysis()">
+      ⚡ 讓 AI 分析：與②教育 / ⑤決策整合的相關性及未來性
+    </button>
+    <div class="ai-output" id="ai-output" style="display:none"></div>
+  </div>
+</div>
+
+<!-- ADD MODAL -->
+<div class="modal-overlay" id="add-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('add-modal')">×</button>
+    <h2 style="margin-bottom:18px">新增追蹤項目</h2>
+
+    <div class="form-group">
+      <label class="form-label">項目名稱 *</label>
+      <input class="form-input" id="f-name" placeholder="e.g. Harvey AI、某 YC 項目...">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">來源</label>
+        <select class="form-select" id="f-source">
+          <option>YC</option><option>Product Hunt</option><option>Kickstarter</option>
+          <option>Indiegogo</option><option>Crunchbase</option><option>Twitter/X</option><option>其他</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">主要類別</label>
+        <select class="form-select" id="f-category">
+          <option value="edu">教育 / 培訓</option>
+          <option value="decision">決策整合 / 法律 / 醫療</option>
+          <option value="infra">AI 基礎設施</option>
+          <option value="data">數據 / 合成數據</option>
+          <option value="health">醫療 / 生技</option>
+          <option value="tool">工具 / 生產力</option>
+          <option value="other">其他</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">官方網址</label>
+      <input class="form-input" id="f-url" placeholder="https://...">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">項目描述（越詳細 AI 分析越準）</label>
+      <textarea class="form-textarea" id="f-desc" placeholder="這個項目在做什麼？解決什麼問題？商業模式是？"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">你的初步觀察 / 疑問</label>
+      <textarea class="form-textarea" id="f-notes" placeholder="你覺得它哪裡有意思？哪裡有問題？" style="min-height:60px"></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">融資規模 / 眾籌金額</label>
+        <input class="form-input" id="f-funding" placeholder="e.g. $3M Seed">
+      </div>
+      <div class="form-group">
+        <label class="form-label">初步信號強度（1–5）</label>
+        <select class="form-select" id="f-signal">
+          <option value="5">5 — 非常強</option><option value="4">4 — 強</option>
+          <option value="3" selected>3 — 中等</option><option value="2">2 — 弱</option><option value="1">1 — 待觀察</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="submit-btn" onclick="addProject()">加入追蹤清單</button>
+  </div>
+</div>
+
+<script>
+const ICON_LINK = `<svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M7 1h4v4M11 1L5.5 6.5M4 2H2a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+const DEMO_PROJECTS = [
+  {
+    id: 1, name: "Synthesis", source: "YC", category: "edu",
+    url: "https://www.synthesis.com",
+    desc: "針對兒童的 AI 自適應學習平台，起源於 SpaceX 員工子女學校。用遊戲化任務取代傳統課程，AI 動態調整難度和路徑。",
+    notes: "已有大量付費用戶，Elon Musk 背景帶來早期曝光。課程生成速度是關鍵壁壘。",
+    funding: "$22M Series A", signal: 5, aiScore: 91, relevance: ["2"], date: "2025-05"
+  },
+  {
+    id: 2, name: "Harvey AI", source: "Crunchbase", category: "decision",
+    url: "https://www.harvey.ai",
+    desc: "AI 原生法律服務平台。幫助律師快速搜索判例、起草文件、分析合約風險。不是讓律師打字更快，而是重新定義誰能用得起法律服務。",
+    notes: "估值已到 $3B。核心護城河是法律數據庫的獨家訓練數據。中小律所是未被服務的長尾市場。",
+    funding: "$3B Valuation", signal: 5, aiScore: 88, relevance: ["5"], date: "2025-04"
+  },
+  {
+    id: 3, name: "Gretel.ai", source: "Crunchbase", category: "data",
+    url: "https://gretel.ai",
+    desc: "合成數據生成平台。幫助企業在不暴露真實用戶數據的情況下訓練 AI 模型。GDPR/HIPAA 合規驅動需求。",
+    notes: "B2B 模式，醫療和金融是主要客戶。數據隱私法規越嚴格，需求越大。",
+    funding: "$52M Series B", signal: 4, aiScore: 72, relevance: [], date: "2025-03"
+  },
+  {
+    id: 4, name: "Khanmigo", source: "Product Hunt", category: "edu",
+    url: "https://www.khanacademy.org/khan-labs",
+    desc: "Khan Academy 推出的 AI 家教。用蘇格拉底式對話引導學生思考，而非直接給答案。支援數學、編程、人文科目。",
+    notes: "非營利背景是雙面刃：公信力高但商業化慢。企業版和學區採購是主要營收來源。",
+    funding: "$54M OpenAI Grant", signal: 4, aiScore: 79, relevance: ["2"], date: "2025-02"
+  },
+  {
+    id: 5, name: "Abridge", source: "Crunchbase", category: "health",
+    url: "https://www.abridge.com",
+    desc: "醫療 AI：自動把醫生和病人的對話轉成結構化病歷摘要。讓醫生從文書中解放，專注診療。Epic 電子病歷系統深度整合。",
+    notes: "典型的⑤信息整合場景：過去大量病歷數據 + 即時對話分析 → 最優文件輸出。醫院採購週期長是障礙。",
+    funding: "$150M Series C", signal: 5, aiScore: 85, relevance: ["5"], date: "2025-05"
+  },
+  {
+    id: 6, name: "Learnosity", source: "其他", category: "edu",
+    url: "https://learnosity.com",
+    desc: "B2B 評測內容 API。讓教育平台快速接入 AI 出題、批改、數據分析功能。不面向學生，面向教育科技公司。",
+    notes: "基礎設施層邏輯，護城河強。但市場相對小眾，主要在英語市場。非英語市場有空白？",
+    funding: "未公開", signal: 3, aiScore: 61, relevance: ["2"], date: "2025-01"
+  }
+];
+
+let projects = [...DEMO_PROJECTS];
+let currentFilter = 'all';
+let selectedProject = null;
+
+// ── RENDER ──────────────────────────────────────────────
+function render() {
+  const list = document.getElementById('project-list');
+  const filtered = filterProjects(projects, currentFilter);
+
+  document.getElementById('total-count').textContent = projects.length;
+  const highSignal = projects.filter(p => p.signal >= 4).length;
+  document.getElementById('high-signal-count').textContent = highSignal;
+  const scores = projects.filter(p => p.aiScore).map(p => p.aiScore);
+  document.getElementById('avg-score').textContent = scores.length
+    ? Math.round(scores.reduce((a,b)=>a+b,0)/scores.length) : '—';
+
+  if (!filtered.length) {
+    list.innerHTML = '<div class="empty">// 沒有符合條件的項目 — 新增一個？</div>';
+    return;
+  }
+  list.innerHTML = filtered.map(p => projectCard(p)).join('');
+}
+
+function projectCard(p) {
+  const catColors   = { edu:'#92700a', decision:'#1a7a4a', infra:'#5b3db8', data:'#c0392b', health:'#c05a10', tool:'#8a8778', other:'#8a8778' };
+  const catLabels   = { edu:'教育', decision:'決策整合', infra:'基礎設施', data:'合成數據', health:'醫療', tool:'工具', other:'其他' };
+  const tagClass    = { edu:'tag-edu', decision:'tag-legal', infra:'tag-infra', data:'tag-data', health:'tag-health', tool:'tag-tool', other:'tag-tool' };
+
+  const color = catColors[p.category] || '#8a8778';
+  const scoreColor = p.aiScore >= 80 ? '#1a7a4a' : p.aiScore >= 60 ? '#92700a' : '#c0392b';
+
+  const signalDots = [1,2,3,4,5].map(i =>
+    `<div class="signal-dot ${i <= p.signal ? (p.signal >= 4 ? 'on' : p.signal >= 3 ? 'on-3' : 'on-2') : ''}"></div>`
+  ).join('');
+
+  const relTags = p.relevance.map(r => {
+    if (r === '2') return '<span class="rel-tag rel-2">② 教育</span>';
+    if (r === '5') return '<span class="rel-tag rel-5">⑤ 決策</span>';
+    return '';
+  }).join('');
+
+  const linkBtn = p.url
+    ? `<a class="link-btn" href="${p.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${ICON_LINK} 官網</a>`
+    : '';
+
+  return `
+  <div class="project-card" style="--tag-color:${color}" onclick="openDetail(${p.id})">
+    <div style="display:flex;align-items:center;gap:10px;min-width:0">
+      <div style="min-width:0">
+        <div class="proj-name">${p.name}</div>
+        <div class="proj-meta">${p.funding || '融資未知'} · ${p.date || '—'}</div>
+      </div>
+      ${linkBtn}
+    </div>
+    <div class="source-badge">${p.source}</div>
+    <div><span class="tag ${tagClass[p.category]}">${catLabels[p.category]}</span></div>
+    <div class="signal">${signalDots}</div>
+    <div class="relevance-wrap">${relTags || '<span style="color:var(--muted);font-size:11px">—</span>'}</div>
+    <div class="score-wrap" style="--bar-color:${scoreColor}">
+      <div class="score-bar-bg"><div class="score-bar-fill" style="width:${p.aiScore || 0}%"></div></div>
+      <div class="score-num">${p.aiScore || '?'}</div>
+    </div>
+  </div>`;
+}
+
+// ── FILTER ──────────────────────────────────────────────
+function filterProjects(list, filter) {
+  if (filter === 'all')      return list;
+  if (filter === 'high')     return list.filter(p => p.signal >= 4);
+  if (filter === 'edu')      return list.filter(p => p.category === 'edu'      || p.relevance.includes('2'));
+  if (filter === 'decision') return list.filter(p => p.category === 'decision' || p.relevance.includes('5'));
+  if (filter === 'infra')    return list.filter(p => p.category === 'infra'    || p.category === 'data');
+  return list;
+}
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active','active-2','active-3'));
+  btn.classList.add('active');
+  render();
+}
+
+// ── MODALS ──────────────────────────────────────────────
+function openDetail(id) {
+  selectedProject = projects.find(p => p.id === id);
+  if (!selectedProject) return;
+  document.getElementById('modal-title').textContent = selectedProject.name;
+  document.getElementById('modal-meta').textContent =
+    `${selectedProject.source} · ${selectedProject.category} · ${selectedProject.funding || '融資未知'} · ${selectedProject.date || ''}`;
+  document.getElementById('modal-desc').textContent  = selectedProject.desc  || '—';
+  document.getElementById('modal-notes').textContent = selectedProject.notes || '—';
+
+  // URL button
+  const urlSection = document.getElementById('modal-url-section');
+  const urlLink    = document.getElementById('modal-url-link');
+  if (selectedProject.url) {
+    urlLink.href = selectedProject.url;
+    urlLink.textContent = '';
+    urlLink.innerHTML = ICON_LINK + ' 前往官網 — ' + selectedProject.url.replace(/^https?:\/\//, '');
+    urlSection.style.display = 'block';
+  } else {
+    urlSection.style.display = 'none';
+  }
+
+  document.getElementById('ai-output').style.display = 'none';
+  document.getElementById('ai-output').textContent   = '';
+  document.getElementById('analyze-btn').disabled    = false;
+  document.getElementById('analyze-btn').textContent = '⚡ 讓 AI 分析：與②教育 / ⑤決策整合的相關性及未來性';
+  document.getElementById('detail-modal').classList.add('open');
+}
+function openAddModal() { document.getElementById('add-modal').classList.add('open'); }
+function closeModal(id)  { document.getElementById(id).classList.remove('open'); }
+
+document.querySelectorAll('.modal-overlay').forEach(el =>
+  el.addEventListener('click', e => { if (e.target === el) el.classList.remove('open'); })
+);
+
+// ── ADD PROJECT ──────────────────────────────────────────
+function addProject() {
+  const name = document.getElementById('f-name').value.trim();
+  if (!name) { alert('請填寫項目名稱'); return; }
+
+  const cat = document.getElementById('f-category').value;
+  const rel = [];
+  if (cat === 'edu')                        rel.push('2');
+  if (cat === 'decision' || cat === 'health') rel.push('5');
+
+  const urlVal = document.getElementById('f-url').value.trim();
+
+  const p = {
+    id: Date.now(), name,
+    source: document.getElementById('f-source').value,
+    category: cat,
+    url: urlVal || null,
+    desc: document.getElementById('f-desc').value,
+    notes: document.getElementById('f-notes').value,
+    funding: document.getElementById('f-funding').value,
+    signal: parseInt(document.getElementById('f-signal').value),
+    aiScore: null, relevance: rel,
+    date: new Date().toISOString().slice(0,7)
+  };
+
+  projects.unshift(p);
+  closeModal('add-modal');
+  ['f-name','f-desc','f-notes','f-funding','f-url'].forEach(id => document.getElementById(id).value = '');
+  render(); updateInsight();
+}
+
+// ── AI ANALYSIS ──────────────────────────────────────────
+async function runAnalysis() {
+  if (!selectedProject) return;
+  const btn = document.getElementById('analyze-btn');
+  const out = document.getElementById('ai-output');
+  btn.disabled = true; btn.textContent = '分析中...';
+  out.style.display = 'block';
+  out.innerHTML = '<span class="thinking">// AI 正在分析，請稍候...</span>';
+
+  const prompt = `你是一個敏銳的創業市場分析師。請針對以下項目進行深度分析：
+
+項目名稱：${selectedProject.name}
+來源平台：${selectedProject.source}
+類別：${selectedProject.category}
+描述：${selectedProject.desc}
+備註：${selectedProject.notes || '無'}
+融資：${selectedProject.funding || '未知'}
+
+請從以下三個角度分析，每個角度2-3句話，語言簡潔直接：
+
+1. 【與②AI教育課程的關聯性】
+   這個項目是否印證了「AI讓課程生產成本趨近於零」的趨勢？有什麼可以學習的地方？
+
+2. 【與⑤信息整合決策的關聯性】
+   這個項目是否印證了「過去案例數據 + 現在決策需求」的模式？決策流程中的哪個環節？
+
+3. 【未來性判斷（給一個0-100的分數）】
+   護城河是什麼？最大風險是什麼？如果你是創業者，這個方向值得進入嗎？
+
+最後一行只輸出：評分: XX/100`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514', max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const text = data.content?.find(b => b.type === 'text')?.text || '分析失敗，請重試。';
+    out.textContent = text;
+
+    const match = text.match(/評分[：:]\s*(\d+)/);
+    if (match) {
+      const score = parseInt(match[1]);
+      const proj = projects.find(p => p.id === selectedProject.id);
+      if (proj) { proj.aiScore = score; render(); }
+    }
+    btn.textContent = '✓ 分析完成 — 再次分析';
+    btn.disabled = false;
+    updateInsight();
+  } catch(e) {
+    out.textContent = '// 連接 AI 失敗。\n\n錯誤：' + e.message;
+    btn.textContent = '重試'; btn.disabled = false;
+  }
+}
+
+// ── INSIGHT ──────────────────────────────────────────────
+function updateInsight() {
+  const eduCount = projects.filter(p => p.relevance.includes('2')).length;
+  const decCount = projects.filter(p => p.relevance.includes('5')).length;
+  const highScore = projects.filter(p => p.aiScore >= 80);
+  let text = `追蹤中 ${projects.length} 個項目 · ② 教育相關 ${eduCount} 個 · ⑤ 決策整合相關 ${decCount} 個`;
+  if (highScore.length) text += ` · 高分: ${highScore.map(p=>p.name).join(', ')}`;
+  document.getElementById('weekly-insight').textContent = text;
+}
+
+render(); updateInsight();
+</script>
+</body>
+</html>
