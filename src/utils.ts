@@ -42,6 +42,46 @@ export function buildInsight(list: Project[]): string {
   return text;
 }
 
+// ── JSON 備份還原 ────────────────────────────────────────
+const VALID_CATEGORIES: Category[] = ['edu', 'decision', 'infra', 'data', 'health', 'tool', 'other'];
+
+/**
+ * 把任意 JSON 資料防呆轉成合法的 Project[]。
+ * 用於還原備份檔：欄位型別錯誤時以預設值填補，缺少 name 的項目直接丟棄，
+ * 確保壞檔不會污染既有資料。
+ */
+export function sanitizeImportedProjects(data: unknown): Project[] {
+  if (!Array.isArray(data)) return [];
+  const out: Project[] = [];
+  for (const raw of data) {
+    if (!raw || typeof raw !== 'object') continue;
+    const o = raw as Record<string, unknown>;
+    const name = typeof o.name === 'string' ? o.name.trim() : '';
+    if (!name) continue;
+
+    const signalNum = Number(o.signal);
+    const aiNum = Number(o.aiScore);
+
+    out.push({
+      id: typeof o.id === 'number' ? o.id : 0, // 0 = 待 App 重新指派
+      name,
+      source: typeof o.source === 'string' && o.source ? o.source : '其他',
+      category: VALID_CATEGORIES.includes(o.category as Category) ? (o.category as Category) : 'other',
+      url: typeof o.url === 'string' && o.url ? o.url : null,
+      desc: typeof o.desc === 'string' ? o.desc : '',
+      notes: typeof o.notes === 'string' ? o.notes : '',
+      funding: typeof o.funding === 'string' ? o.funding : '',
+      signal: Number.isFinite(signalNum) ? Math.min(5, Math.max(1, Math.round(signalNum))) : 3,
+      aiScore: o.aiScore == null ? null : Number.isFinite(aiNum) ? aiNum : null,
+      relevance: Array.isArray(o.relevance)
+        ? o.relevance.filter((r): r is string => typeof r === 'string')
+        : [],
+      date: typeof o.date === 'string' ? o.date : '',
+    });
+  }
+  return out;
+}
+
 // ── 貼上匯入（pipe 格式）─────────────────────────────────
 /** 類別字串 → Category（接受英文 key 與中文標籤） */
 const CATEGORY_ALIASES: Record<string, Category> = {
