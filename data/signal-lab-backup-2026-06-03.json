@@ -1,5 +1,166 @@
 [
   {
+    "name": "Viktor",
+    "source": "Fundup AI / Crunchbase",
+    "category": "tool",
+    "url": "https://fundup.ai/recently-funded-startups",
+    "desc": "在 Slack/Teams 內運作的 AI 同事",
+    "notes": "零 friction 工作流切入，不需換工具",
+    "funding": "$75M Seed",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1780502639652,
+    "date": "2026-06"
+  },
+  {
+    "name": "Humans&",
+    "source": "Crunchbase",
+    "category": "infra",
+    "url": "https://news.crunchbase.com/venture/seed-seriesa-startup-megadeals-ai-2026/",
+    "desc": "由頂尖 AI 研究員創立的基礎模型公司",
+    "notes": "夢幻團隊組合，直接挑戰現有 frontier labs",
+    "funding": "$480M Seed",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1780502639653,
+    "date": "2026-06"
+  },
+  {
+    "name": "Recursive Superintelligence",
+    "source": "AI Funding Tracker",
+    "category": "infra",
+    "url": "https://aifundingtracker.com/ai-startup-funding-news-today/",
+    "desc": "遞迴自我改進 AI 模型，無需人類介入",
+    "notes": "AI 安全最高風險最大想像空間的賭注",
+    "funding": "$650M",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1780502639654,
+    "date": "2026-06"
+  },
+  {
+    "name": "Steno",
+    "source": "AI Funding Tracker",
+    "category": "decision",
+    "url": "https://aifundingtracker.com/",
+    "desc": "法庭速記公司 + 科技公司，Transcript Genius 產品",
+    "notes": "真實訴訟數據護城河，非純軟體競爭對手可比",
+    "funding": "$49M Series C",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "id": 1780502639655,
+    "date": "2026-06"
+  },
+  {
+    "name": "Oboe",
+    "source": "Crescendo AI",
+    "category": "edu",
+    "url": "https://www.crescendo.ai/news/latest-vc-investment-deals-in-ai-startups",
+    "desc": "AI 平台，秒速生成任意主題完整個人化課程",
+    "notes": "生成課程而非問答，擴張性強",
+    "funding": "$16M",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1780502639656,
+    "date": "2026-06"
+  },
+  {
+    "name": "Aaru",
+    "source": "Crunchbase",
+    "category": "data",
+    "url": "https://aifundingtracker.com/",
+    "desc": "用 AI 建立合成人群，模擬人類行為即時市調",
+    "notes": "合成數據 x 市調結合，非常規護城河",
+    "funding": "$50M+ Series A / $1B 估值",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1780502639657,
+    "date": "2026-06"
+  },
+  {
+    "name": "Fluidstack",
+    "source": "TechCrunch",
+    "category": "infra",
+    "url": "https://techcrunch.com/2026/04/14/ai-datacenter-startup-fluidstack-in-talks-for-1b-round-at-18b-valuation-months-after-hitting-7-5b-says-report/",
+    "desc": "為 AI 公司建設專用數據中心",
+    "notes": "3 個月估值從 $7.5B 到 $18B，算力稀缺性護城河",
+    "funding": "洽談 $1B / 估值 $18B",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1780502639658,
+    "date": "2026-06"
+  },
+  {
+    "name": "Harness",
+    "source": "AI Startup Trends",
+    "category": "tool",
+    "url": "https://blog.mean.ceo/ai-startup-trends-june-2026/",
+    "desc": "AI agent 自動化代碼提交後全流程（測試/部署/監控）",
+    "notes": "1,000+ 企業客戶、ARR $250M，有真實規模收入",
+    "funding": "$240M Series E / $5.5B 估值",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1780502639659,
+    "date": "2026-06"
+  },
+  {
+    "name": "Rebar",
+    "source": "New Market Pitch",
+    "category": "tool",
+    "url": "https://newmarketpitch.com/blogs/news/agentic-ai-funding-trends",
+    "desc": "暖通空調/電氣/管道供應商 AI 操作系統",
+    "notes": "極深垂直切入，傳統行業數位化空白大，前 6 週 ARR 翻倍",
+    "funding": "$14M Series A",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1780502639660,
+    "date": "2026-06"
+  },
+  {
+    "name": "Hex Security",
+    "source": "YC W26 / BEAMSTART",
+    "category": "tool",
+    "url": "https://beamstart.com/news/16-of-the-most-interesting-17745539114930",
+    "desc": "AI agent 作為 24/7 持續滲透測試員",
+    "notes": "傳統 pentest 昂貴低頻，AI agent 有明確降本邏輯",
+    "funding": "YC W26",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1780502639661,
+    "date": "2026-06"
+  },
+  {
+    "name": "Translucent",
+    "source": "Fortune",
+    "category": "health",
+    "url": "https://fortune.com/2026/03/11/exclusive-translucent-ai-native-healthcare-finance-startup-raises-27-million-series-a/",
+    "desc": "AI 原生醫療財務管理，鎖定帳務與保險請款",
+    "notes": "Healthcare billing 是美國最複雜流程之一，切入點精準",
+    "funding": "$27M Series A",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "id": 1780502639662,
+    "date": "2026-06"
+  },
+  {
+    "id": 1780488669161,
     "name": "Manifest",
     "source": "Crunchbase",
     "category": "decision",
@@ -12,10 +173,10 @@
     "relevance": [
       "5"
     ],
-    "id": 1780488669161,
     "date": "2026-06"
   },
   {
+    "id": 1780488669162,
     "name": "Crosby",
     "source": "Crunchbase",
     "category": "decision",
@@ -28,10 +189,10 @@
     "relevance": [
       "5"
     ],
-    "id": 1780488669162,
     "date": "2026-06"
   },
   {
+    "id": 1780488669163,
     "name": "Legora",
     "source": "TechCrunch",
     "category": "decision",
@@ -44,10 +205,10 @@
     "relevance": [
       "5"
     ],
-    "id": 1780488669163,
     "date": "2026-06"
   },
   {
+    "id": 1780488669164,
     "name": "Adaptive Innovations",
     "source": "Tech Startups",
     "category": "health",
@@ -60,10 +221,10 @@
     "relevance": [
       "5"
     ],
-    "id": 1780488669164,
     "date": "2026-06"
   },
   {
+    "id": 1780488669165,
     "name": "Subtle Medical",
     "source": "Tech Startups",
     "category": "health",
@@ -76,10 +237,10 @@
     "relevance": [
       "5"
     ],
-    "id": 1780488669165,
     "date": "2026-06"
   },
   {
+    "id": 1780488669166,
     "name": "CodaMetrix",
     "source": "其他",
     "category": "decision",
@@ -92,10 +253,10 @@
     "relevance": [
       "5"
     ],
-    "id": 1780488669166,
     "date": "2026-06"
   },
   {
+    "id": 1780488669167,
     "name": "OpenEvidence",
     "source": "其他",
     "category": "decision",
@@ -108,7 +269,6 @@
     "relevance": [
       "5"
     ],
-    "id": 1780488669167,
     "date": "2026-06"
   },
   {
