@@ -1,8 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import type { ChangeEvent } from 'react';
 import type { FilterKey, ParsedProject, Project } from './types';
-import { DEMO_PROJECTS, STORAGE_KEY } from './constants';
-import { useLocalStorage } from './hooks/useLocalStorage';
+import { useProjectStore } from './hooks/useProjectStore';
 import { buildInsight, deriveStats, filterProjects, sanitizeImportedProjects } from './utils';
 import { Header } from './components/Header';
 import { InsightBar } from './components/InsightBar';
@@ -13,7 +12,7 @@ import { AddModal } from './components/AddModal';
 import { ImportModal } from './components/ImportModal';
 
 export default function App() {
-  const [projects, setProjects] = useLocalStorage<Project[]>(STORAGE_KEY, DEMO_PROJECTS);
+  const [projects, setProjects, store] = useProjectStore();
   const [filter, setFilter] = useState<FilterKey>('all');
   const [detailId, setDetailId] = useState<number | null>(null);
   const [addOpen, setAddOpen] = useState(false);
@@ -103,6 +102,37 @@ export default function App() {
     <>
       <div className="wrap">
         <Header stats={stats} />
+        {store.mode === 'local' && (
+          <div
+            style={{
+              margin: '8px 0',
+              padding: '8px 12px',
+              borderRadius: 8,
+              fontSize: 13,
+              background: 'rgba(192, 90, 16, 0.12)',
+              border: '1px solid rgba(192, 90, 16, 0.4)',
+              color: '#c05a10',
+            }}
+          >
+            📦 部署版：變更只暫存在這個瀏覽器（localStorage），不會寫回 repo。要編輯並同步請在本機跑
+            <code style={{ margin: '0 4px' }}>npm run dev</code>，改完 git commit / push。
+          </div>
+        )}
+        {store.error && (
+          <div
+            style={{
+              margin: '8px 0',
+              padding: '8px 12px',
+              borderRadius: 8,
+              fontSize: 13,
+              background: 'rgba(192, 57, 43, 0.12)',
+              border: '1px solid rgba(192, 57, 43, 0.4)',
+              color: '#c0392b',
+            }}
+          >
+            ⚠️ 存檔失敗：{store.error}（dev 伺服器是否在執行？）
+          </div>
+        )}
         <InsightBar text={insight} />
         <Controls
           filter={filter}

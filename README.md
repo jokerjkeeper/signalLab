@@ -1,6 +1,6 @@
 # Signal Lab — AI 項目情報站
 
-追蹤 AI 創業 / 眾籌項目的工具。原為單檔 HTML（`signal-lab_1.html`，保留作對照），現已用 **React + Vite + TypeScript** 重構為正式 web app，並加上 **localStorage 持久化**。
+追蹤 AI 創業 / 眾籌項目的工具。原為單檔 HTML（`signal-lab_1.html`，保留作對照），現已用 **React + Vite + TypeScript** 重構為正式 web app，資料以 **檔案持久化（`data/projects.json`，git 追蹤）** 為主、localStorage 為輔。
 
 ## 功能
 
@@ -10,11 +10,26 @@
 - 新增項目（表單 modal）、項目詳細 modal、**刪除項目**（詳情 modal 內，含確認）
 - **貼上匯入**：把 `signal-scan` 產出的 pipe 格式整段貼上，自動解析加入（見下）
 - **匯出 / 還原 JSON 備份**：`⤓ 匯出` 下載全部項目為 JSON；`⤒ 還原` 選備份檔合併回來（見下）
-- **localStorage 持久化**：新增 / 匯入的項目重新整理後仍保留（鍵名 `signal-lab.projects`）
+- **檔案持久化**：資料存在 repo 內的 `data/projects.json`，可 git commit / push，其他電腦 pull 就看得到（見下）
 
-### 匯出 / 還原 JSON 備份
+### 資料持久化（`data/projects.json`）
 
-資料只存在瀏覽器 localStorage（不進 git、不跨裝置）。要備份或搬到另一台電腦 / 另一個 port：
+資料的正式來源是 repo 內的 **`data/projects.json`**（git 追蹤），不再綁在單一瀏覽器。寫入行為依環境分流：
+
+| 情境 | 載入 | 寫入 |
+|------|------|------|
+| **本機 `npm run dev`**（編輯主場） | `data/projects.json` | 變更自動 `POST /api/projects` → dev 伺服器**寫回該檔**（debounce 400ms）。你再 `git commit && git push`。 |
+| **部署的靜態站**（GitHub Pages / Vercel） | 打包進去的 `data/projects.json` | 沒有後端可寫檔，變更只進 localStorage 草稿（`signal-lab.local-draft`，**不會回 repo**），畫面會顯示提示。 |
+
+跨電腦同步流程：在 A 機 `npm run dev` 編輯 → commit / push；B 機 `git pull` → `npm run dev` 即見最新清單。
+
+- 寫檔由 `vite.config.ts` 的 `signal-lab-file-store` dev 外掛提供（僅 dev 生效；內容相同會略過寫入，避免 git 雜訊）。
+- 持久層在 `src/hooks/useProjectStore.ts`。首次在 dev 開啟新版時，會把**舊版 localStorage（`signal-lab.projects`）的資料一次性併入檔案**（依名稱去重），不會遺失既有追蹤。
+- `data/projects.json` 的初始內容由 `scripts/build-seed.mjs` 從 `signal-lab-backup-2026-06-03.json` + 近期標的合併產生（一次性工具，可重跑）。
+
+#### 匯出 / 還原 JSON 備份
+
+要手動備份或搬移：
 
 - **⤓ 匯出**：下載 `signal-lab-backup-<日期>.json`，內含目前所有項目。
 - **⤒ 還原**：選一個備份檔，**合併**進現有清單 —— 同名項目自動略過、id 撞號自動換新，完成後回報「還原 N 筆 / 略過 M 筆」。
@@ -40,7 +55,7 @@
 
 ```bash
 npm install      # 安裝相依套件
-npm run dev      # 開發伺服器（http://localhost:5173）
+npm run dev      # 開發伺服器（http://localhost:5179）
 npm run build    # 型別檢查 + production build → dist/
 npm run preview  # 預覽 build 結果
 ```
@@ -53,13 +68,22 @@ src/
 ├─ App.tsx               # 狀態中樞 + 組裝
 ├─ index.css             # 全域樣式
 ├─ types.ts              # Project / Category / FilterKey 型別
-├─ constants.ts          # DEMO_PROJECTS、類別色/標籤對應、STORAGE_KEY
-├─ utils.ts              # filterProjects / deriveStats / buildInsight
-├─ hooks/useLocalStorage.ts
+├─ constants.ts          # 類別色/標籤對應（DEMO_PROJECTS / STORAGE_KEY 已停用）
+├─ utils.ts              # filterProjects / deriveStats / buildInsight / 匯入解析
+├─ hooks/useProjectStore.ts   # 檔案持久層（dev 寫檔 / 部署退回 localStorage）
+├─ hooks/useLocalStorage.ts   # 舊版 hook，已不再使用
 └─ components/           # Header / InsightBar / Controls / ProjectList
                          # ProjectCard / Modal / DetailModal / AddModal / LinkIcon
+
+data/
+├─ projects.json                      # 正式資料（git 追蹤）
+└─ signal-lab-backup-2026-06-03.json  # 早期手動備份快照
+scripts/
+└─ build-seed.mjs        # 重新產生 data/projects.json 的一次性種子工具
 ```
 
 ## 資料重置
 
-清除追蹤清單：開瀏覽器 DevTools → Application → Local Storage → 刪除 `signal-lab.projects`，重新整理即回到 demo 資料。
+- **重置正式資料**：重跑 `node scripts/build-seed.mjs` 會以備份 + 近期標的覆寫 `data/projects.json`。
+- **清部署版本機草稿**：DevTools → Application → Local Storage → 刪除 `signal-lab.local-draft`。
+- **重做一次性遷移**：刪除 localStorage 的 `signal-lab.migrated-to-file` 旗標。

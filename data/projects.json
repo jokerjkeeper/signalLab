@@ -1,0 +1,496 @@
+[
+  {
+    "id": 1780600000001,
+    "name": "Flourish",
+    "source": "TechTimes",
+    "category": "infra",
+    "url": "https://www.techtimes.com/articles/317921/20260606/jeff-bezos-bets-flourish-500-million-startup-trying-copy-brain-fix-ais-power-crisis.htm",
+    "desc": "connectomics 仿腦低功耗 AI，目標把推理功耗壓到 20–50W（筆電等級）",
+    "notes": "Bezos+Lux+GV 投資，IE 之父 Thomas Reardon 創辦，另闢仿腦架構解 AI 電力危機。官網未確認。",
+    "funding": "$500M 種子輪 / 估值 $2.5B",
+    "signal": 4,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780600000002,
+    "name": "Generalist AI",
+    "source": "The Robot Report",
+    "category": "infra",
+    "url": "https://www.therobotreport.com/generalist-raises-400m-to-scale-its-general-purpose-ai-models/",
+    "desc": "給所有機器人用的通用實體 AI 模型（GEN-1），用於工廠 / 倉庫 / 實驗室",
+    "notes": "DeepMind / Boston Dynamics 團隊，Nvidia+Bezos 跟投，GEN-1 號稱 99% 可靠度。官網未確認。",
+    "funding": "$400M / 估值 $2B",
+    "signal": 4,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780600000003,
+    "name": "NEURA Robotics",
+    "source": "BusinessWire",
+    "category": "infra",
+    "url": "https://neura-robotics.com",
+    "desc": "全棧認知機器人平台 Neuraverse，機器人持續學習與協作",
+    "notes": "歐洲最大全棧人形機器人輪，Tether / Nvidia / Amazon 投資，訂單 pipeline 逾 $10 億。\n來源: https://www.businesswire.com/news/home/20260610204575/en/",
+    "funding": "最高 $1.4B Series C / 估值 $7B",
+    "signal": 4,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780600000004,
+    "name": "Bland",
+    "source": "Fortune",
+    "category": "tool",
+    "url": "https://bland.ai",
+    "desc": "受監管產業的企業級語音 AI agent（電話 / SMS / chat）",
+    "notes": "自研語音模型非套殼，250+ 企業客戶、年處理 1.75 億通電話。\n來源: https://fortune.com/2026/06/16/voice-ai-bland-50-million-after-being-rejected-by-180-investors/",
+    "funding": "$50M Series C / 累計破 $100M",
+    "signal": 4,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780600000005,
+    "name": "Ent",
+    "source": "SecurityWeek",
+    "category": "tool",
+    "url": "https://www.securityweek.com/endpoint-security-startup-ent-emerges-from-stealth-with-100-million-seed-round/",
+    "desc": "意圖感知端點防護，即時監控人類與 AI agent 的異常行為",
+    "notes": "RiskIQ 創辦人 + 微軟 Security Copilot 團隊，已部署 Global 2000 金融 / 國防。官網未確認。",
+    "funding": "$100M 種子輪",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780600000006,
+    "name": "Limitless Labs",
+    "source": "Unite.AI",
+    "category": "tool",
+    "url": "https://www.unite.ai/limitless-labs-raises-20m-series-a-to-bring-agentic-ai-into-precision-manufacturing/",
+    "desc": "嵌入 CAD/CAM 的 CNC agentic AI，自動辨識加工特徵並生成刀路",
+    "notes": "已在 Blue Origin / Cadillac F1 / Sandvik 產線部署，CNC 編程時間省 50%。官網未確認。",
+    "funding": "$20M Series A / 累計 $27.3M",
+    "signal": 4,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780600000007,
+    "name": "Probably",
+    "source": "Tech Startups",
+    "category": "infra",
+    "url": "https://techstartups.com/2026/06/16/venture-capital-startup-funding-roundup-june-15-2026-2/",
+    "desc": "LLM 輸出驗證中間層，攔截幻覺並附引用與稽核軌跡",
+    "notes": "a16z 投資，切企業可靠性痛點。來源較少，建議再自行查證。官網未確認。",
+    "funding": "$9M 種子輪",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780600000008,
+    "name": "Cyera",
+    "source": "Intellizence",
+    "category": "tool",
+    "url": "https://intellizence.com/insights/startup-funding/the-weeks-5-biggest-funding-deals-ai-robotics-space-intelligence-cybersecurity-and-it-automation-dominated-the-week/",
+    "desc": "企業資料安全與 AI 治理平台",
+    "notes": "AI 普及後資料治理成剛需，客戶明確；確切日期 / 輪次代號待官方確認。官網未確認。",
+    "funding": "約 $600M 後期輪 / 估值 $12B",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780600000009,
+    "name": "AlphaSense",
+    "source": "Crunchbase News",
+    "category": "decision",
+    "url": "https://www.alpha-sense.com",
+    "desc": "AI 市場情報與工作流編排平台",
+    "notes": "龐大金融 / 企業客戶 + 專有內容資料，成熟有營收非套殼。\n來源: https://news.crunchbase.com/venture/biggest-funding-rounds-june-5-2026/",
+    "funding": "$350M growth round",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639652,
+    "name": "Viktor",
+    "source": "Fundup AI / Crunchbase",
+    "category": "tool",
+    "url": "https://fundup.ai/recently-funded-startups",
+    "desc": "在 Slack/Teams 內運作的 AI 同事",
+    "notes": "零 friction 工作流切入，不需換工具",
+    "funding": "$75M Seed",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639653,
+    "name": "Humans&",
+    "source": "Crunchbase",
+    "category": "infra",
+    "url": "https://news.crunchbase.com/venture/seed-seriesa-startup-megadeals-ai-2026/",
+    "desc": "由頂尖 AI 研究員創立的基礎模型公司",
+    "notes": "夢幻團隊組合，直接挑戰現有 frontier labs",
+    "funding": "$480M Seed",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639654,
+    "name": "Recursive Superintelligence",
+    "source": "AI Funding Tracker",
+    "category": "infra",
+    "url": "https://aifundingtracker.com/ai-startup-funding-news-today/",
+    "desc": "遞迴自我改進 AI 模型，無需人類介入",
+    "notes": "AI 安全最高風險最大想像空間的賭注",
+    "funding": "$650M",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639655,
+    "name": "Steno",
+    "source": "AI Funding Tracker",
+    "category": "decision",
+    "url": "https://aifundingtracker.com/",
+    "desc": "法庭速記公司 + 科技公司，Transcript Genius 產品",
+    "notes": "真實訴訟數據護城河，非純軟體競爭對手可比",
+    "funding": "$49M Series C",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639656,
+    "name": "Oboe",
+    "source": "Crescendo AI",
+    "category": "edu",
+    "url": "https://www.crescendo.ai/news/latest-vc-investment-deals-in-ai-startups",
+    "desc": "AI 平台，秒速生成任意主題完整個人化課程",
+    "notes": "生成課程而非問答，擴張性強",
+    "funding": "$16M",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639657,
+    "name": "Aaru",
+    "source": "Crunchbase",
+    "category": "data",
+    "url": "https://aifundingtracker.com/",
+    "desc": "用 AI 建立合成人群，模擬人類行為即時市調",
+    "notes": "合成數據 x 市調結合，非常規護城河",
+    "funding": "$50M+ Series A / $1B 估值",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639658,
+    "name": "Fluidstack",
+    "source": "TechCrunch",
+    "category": "infra",
+    "url": "https://techcrunch.com/2026/04/14/ai-datacenter-startup-fluidstack-in-talks-for-1b-round-at-18b-valuation-months-after-hitting-7-5b-says-report/",
+    "desc": "為 AI 公司建設專用數據中心",
+    "notes": "3 個月估值從 $7.5B 到 $18B，算力稀缺性護城河",
+    "funding": "洽談 $1B / 估值 $18B",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639659,
+    "name": "Harness",
+    "source": "AI Startup Trends",
+    "category": "tool",
+    "url": "https://blog.mean.ceo/ai-startup-trends-june-2026/",
+    "desc": "AI agent 自動化代碼提交後全流程（測試/部署/監控）",
+    "notes": "1,000+ 企業客戶、ARR $250M，有真實規模收入",
+    "funding": "$240M Series E / $5.5B 估值",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639660,
+    "name": "Rebar",
+    "source": "New Market Pitch",
+    "category": "tool",
+    "url": "https://newmarketpitch.com/blogs/news/agentic-ai-funding-trends",
+    "desc": "暖通空調/電氣/管道供應商 AI 操作系統",
+    "notes": "極深垂直切入，傳統行業數位化空白大，前 6 週 ARR 翻倍",
+    "funding": "$14M Series A",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639661,
+    "name": "Hex Security",
+    "source": "YC W26 / BEAMSTART",
+    "category": "tool",
+    "url": "https://beamstart.com/news/16-of-the-most-interesting-17745539114930",
+    "desc": "AI agent 作為 24/7 持續滲透測試員",
+    "notes": "傳統 pentest 昂貴低頻，AI agent 有明確降本邏輯",
+    "funding": "YC W26",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780502639662,
+    "name": "Translucent",
+    "source": "Fortune",
+    "category": "health",
+    "url": "https://fortune.com/2026/03/11/exclusive-translucent-ai-native-healthcare-finance-startup-raises-27-million-series-a/",
+    "desc": "AI 原生醫療財務管理，鎖定帳務與保險請款",
+    "notes": "Healthcare billing 是美國最複雜流程之一，切入點精準",
+    "funding": "$27M Series A",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780488669161,
+    "name": "Manifest",
+    "source": "Crunchbase",
+    "category": "decision",
+    "url": "https://www.pymnts.com/news/investment-tracker/2026/manifest-raises-60-million-in-record-legal-ai-funding-round/",
+    "desc": "AI 原生律所,自家 AI+集中後台,按結果收費",
+    "notes": "把「服務即軟體」做到開整間律所,最徹底",
+    "funding": "$60M Series A / $750M",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780488669162,
+    "name": "Crosby",
+    "source": "Crunchbase",
+    "category": "decision",
+    "url": "https://www.artificiallawyer.com/2026/04/02/crosby-on-big-law-rd-legora-100-tr-hotshot-legal-innovators/",
+    "desc": "agentic AI 律所,主攻合約審查",
+    "notes": "AI+律師混合模式驗證合約場景",
+    "funding": "$60M Series B",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780488669163,
+    "name": "Legora",
+    "source": "TechCrunch",
+    "category": "decision",
+    "url": "https://legora.com",
+    "desc": "律師協作 AI:研究/審閱/起草",
+    "notes": "ARR 破億、直接對撞 Harvey\n來源: https://techcrunch.com/2026/04/30/legal-ai-startup-legora-hits-5-6-valuation-and-its-battle-with-harvey-just-got-hotter/",
+    "funding": "$550M Series D+$50M / $5.6B",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780488669164,
+    "name": "Adaptive Innovations",
+    "source": "Tech Startups",
+    "category": "health",
+    "url": "https://techstartups.com/2026/06/02/venture-capital-startup-funding-roundup-june-2-2026/",
+    "desc": "醫療 AI 照護交付基礎設施",
+    "notes": "Optum Ventures 入股,貼近付費方決策",
+    "funding": "$50M Series A",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780488669165,
+    "name": "Subtle Medical",
+    "source": "Tech Startups",
+    "category": "health",
+    "url": "https://subtlemedical.com",
+    "desc": "醫療影像增強/加速 AI",
+    "notes": "影像端,偏基礎設施\n來源: https://techstartups.com/2026/06/02/venture-capital-startup-funding-roundup-june-2-2026/",
+    "funding": "$33M Series C",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780488669166,
+    "name": "CodaMetrix",
+    "source": "其他",
+    "category": "decision",
+    "url": "https://codametrix.com",
+    "desc": "自動化醫療編碼(病歷→coding/billing)",
+    "notes": "病歷資料→決策輸出的典型⑤場景\n來源: https://aifundingtracker.com/top-ai-healthcare-startups/",
+    "funding": "",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1780488669167,
+    "name": "OpenEvidence",
+    "source": "其他",
+    "category": "decision",
+    "url": "https://openevidence.com",
+    "desc": "臨床決策支援/醫學資訊 AI",
+    "notes": "醫師決策當下的資訊整合\n來源: https://aifundingtracker.com/top-ai-healthcare-startups/",
+    "funding": "",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "date": "2026-06"
+  },
+  {
+    "id": 1,
+    "name": "Synthesis",
+    "source": "YC",
+    "category": "edu",
+    "url": "https://www.synthesis.com",
+    "desc": "針對兒童的 AI 自適應學習平台，起源於 SpaceX 員工子女學校。用遊戲化任務取代傳統課程，AI 動態調整難度和路徑。",
+    "notes": "已有大量付費用戶，Elon Musk 背景帶來早期曝光。課程生成速度是關鍵壁壘。",
+    "funding": "$22M Series A",
+    "signal": 5,
+    "aiScore": 91,
+    "relevance": [
+      "2"
+    ],
+    "date": "2025-05"
+  },
+  {
+    "id": 2,
+    "name": "Harvey AI",
+    "source": "Crunchbase",
+    "category": "decision",
+    "url": "https://www.harvey.ai",
+    "desc": "AI 原生法律服務平台。幫助律師快速搜索判例、起草文件、分析合約風險。不是讓律師打字更快，而是重新定義誰能用得起法律服務。",
+    "notes": "估值已到 $3B。核心護城河是法律數據庫的獨家訓練數據。中小律所是未被服務的長尾市場。",
+    "funding": "$3B Valuation",
+    "signal": 5,
+    "aiScore": 88,
+    "relevance": [
+      "5"
+    ],
+    "date": "2025-04"
+  },
+  {
+    "id": 3,
+    "name": "Gretel.ai",
+    "source": "Crunchbase",
+    "category": "data",
+    "url": "https://gretel.ai",
+    "desc": "合成數據生成平台。幫助企業在不暴露真實用戶數據的情況下訓練 AI 模型。GDPR/HIPAA 合規驅動需求。",
+    "notes": "B2B 模式，醫療和金融是主要客戶。數據隱私法規越嚴格，需求越大。",
+    "funding": "$52M Series B",
+    "signal": 4,
+    "aiScore": 72,
+    "relevance": [],
+    "date": "2025-03"
+  },
+  {
+    "id": 4,
+    "name": "Khanmigo",
+    "source": "Product Hunt",
+    "category": "edu",
+    "url": "https://www.khanacademy.org/khan-labs",
+    "desc": "Khan Academy 推出的 AI 家教。用蘇格拉底式對話引導學生思考，而非直接給答案。支援數學、編程、人文科目。",
+    "notes": "非營利背景是雙面刃：公信力高但商業化慢。企業版和學區採購是主要營收來源。",
+    "funding": "$54M OpenAI Grant",
+    "signal": 4,
+    "aiScore": 79,
+    "relevance": [
+      "2"
+    ],
+    "date": "2025-02"
+  },
+  {
+    "id": 5,
+    "name": "Abridge",
+    "source": "Crunchbase",
+    "category": "health",
+    "url": "https://www.abridge.com",
+    "desc": "醫療 AI：自動把醫生和病人的對話轉成結構化病歷摘要。讓醫生從文書中解放，專注診療。Epic 電子病歷系統深度整合。",
+    "notes": "典型的⑤信息整合場景：過去大量病歷數據 + 即時對話分析 → 最優文件輸出。醫院採購週期長是障礙。",
+    "funding": "$150M Series C",
+    "signal": 5,
+    "aiScore": 85,
+    "relevance": [
+      "5"
+    ],
+    "date": "2025-05"
+  },
+  {
+    "id": 6,
+    "name": "Learnosity",
+    "source": "其他",
+    "category": "edu",
+    "url": "https://learnosity.com",
+    "desc": "B2B 評測內容 API。讓教育平台快速接入 AI 出題、批改、數據分析功能。不面向學生，面向教育科技公司。",
+    "notes": "基礎設施層邏輯，護城河強。但市場相對小眾，主要在英語市場。非英語市場有空白？",
+    "funding": "未公開",
+    "signal": 3,
+    "aiScore": 61,
+    "relevance": [
+      "2"
+    ],
+    "date": "2025-01"
+  }
+]
