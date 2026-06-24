@@ -60,7 +60,10 @@ function fileStorePlugin(): Plugin {
 }
 
 // https://vite.dev/config/
-export default defineConfig({
+// build 時用 GitHub Pages 專案站子路徑（https://<user>.github.io/signalLab/）；
+// dev 維持根路徑 '/'，本機開發網址才乾淨。
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/signalLab/' : '/',
   plugins: [react(), fileStorePlugin()],
   server: {
     // 綁所有介面，讓 localhost / 127.0.0.1 / 區網 IP 都連得到（避免 IPv6 ::1 與 IPv4 不一致）
@@ -75,4 +78,4 @@ export default defineConfig({
     port: 5179,
     strictPort: true,
   },
-});
+}));
