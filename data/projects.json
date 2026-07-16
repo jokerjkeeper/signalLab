@@ -1,5 +1,133 @@
 [
   {
+    "name": "Bondu",
+    "source": "GamesBeat",
+    "category": "edu",
+    "url": "https://bondu.com",
+    "desc": "情感智能 AI 對話玩具,透過安全互動遊戲陪兒童學習成長",
+    "notes": "Makers Fund(遊戲基金)領投+Samsung Ventures,遊戲×兒童陪伴交叉點\n來源: https://gamesbeat.com/ai-toy-startup-raises-5-3-million-to-launch-emotionally-intelligent-companion-for-kids-named-bondu/",
+    "funding": "$5.3M Seed (2025-10)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1784218779056,
+    "date": "2026-07"
+  },
+  {
+    "name": "Haivivi 跃然创新",
+    "source": "TMTPost/36Kr",
+    "category": "edu",
+    "url": "https://www.haivivi.com",
+    "desc": "BubblePal 掛件讓任何毛絨玩具變 AI 對話夥伴,無螢幕",
+    "notes": "銷量30萬+、紅杉中國/中金押注、2026/6 進美國,中國 AI 玩具龍頭\n來源: https://en.tmtpost.com/post/7670806",
+    "funding": "$28M Series A",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1784218779057,
+    "date": "2026-07"
+  },
+  {
+    "name": "FoloToy",
+    "source": "36Kr",
+    "category": "edu",
+    "url": "https://folotoy.com",
+    "desc": "AI 陪伴玩具互動模組,低成本嵌入各種玩具終端",
+    "notes": "B2B 模組化切入,銷量年增5倍,與 C 端品牌路線互補\n來源: https://eu.36kr.com/en/p/3654915542130816",
+    "funding": "數千萬人民幣 (2026-01)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1784218779058,
+    "date": "2026-07"
+  },
+  {
+    "name": "Ello",
+    "source": "EdTech Chronicle",
+    "category": "edu",
+    "url": "https://www.ello.com",
+    "desc": "4-9 歲 AI 閱讀+數學教練,自研兒童語音模型",
+    "notes": "10萬小時兒童音訊訓練的語音壁壘,YC/Khosla/Common Sense Media\n來源: https://edtechchronicle.com/ai-reading-coach-ello-raises-15m-series-a/",
+    "funding": "累計 ~$22.9M (A輪 $15M)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1784218779059,
+    "date": "2026-07"
+  },
+  {
+    "name": "Heeyo",
+    "source": "TechCrunch",
+    "category": "edu",
+    "url": "https://www.heeyo.ai",
+    "desc": "3-11 歲 AI 家教+玩伴,2000+ 互動遊戲,COPPA 合規",
+    "notes": "OpenAI Startup Fund + Alexa Fund 同時投資,安全合規做為賣點\n來源: https://techcrunch.com/2024/08/01/heeyo-built-an-ai-chatbot-to-be-a-billion-kids-interactive-tutor-and-friend/",
+    "funding": "$3.5M Seed",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1784218779060,
+    "date": "2026-07"
+  },
+  {
+    "name": "Gizmo",
+    "source": "TechCrunch",
+    "category": "edu",
+    "url": "https://gizmo.ai",
+    "desc": "遊戲化 AI 學習平台,遊戲機制驅動學習動機",
+    "notes": "13M 用戶規模驗證,近期教育遊戲最大一筆融資\n來源: https://techcrunch.com/2026/04/15/ai-learning-app-gizmo-levels-up-with-13m-users-and-a-22m-investment/",
+    "funding": "$22M Series A (2026-04)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1784218779061,
+    "date": "2026-07"
+  },
+  {
+    "name": "Wizzer",
+    "source": "VCBacked",
+    "category": "edu",
+    "url": "https://www.wizzerapp.com",
+    "desc": "AI 育兒教練:個人化指導+動畫影片+社群+遊戲化成長樹",
+    "notes": "「教家長培養小孩 EQ」的差異化切入,仍在 beta 早期\n來源: https://www.vcbacked.co/directory/industries/parenting",
+    "funding": "",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1784218779062,
+    "date": "2026-07"
+  },
+  {
+    "name": "PeacePath",
+    "source": "產業評測",
+    "category": "edu",
+    "url": "https://www.peacepath-compass.com",
+    "desc": "AI 共同監護溝通:敵意語言偵測、冷靜改寫、監護分析",
+    "notes": "育兒 AI 中付費剛需最強的子賽道(離婚監護場景)\n來源: https://www.peacepath-compass.com/blog/co-parenting-communication-apps-2026 ⚠️ 提醒:請點來源連結查證再匯入——尤其 Wizzer、PeacePath 的融資資訊查不到確切數字(已標「未知」),Haivivi 的 $28M 與「近 3 億人民幣累計」來自不同報導,金額可能有出入。Curio(Grimes 配音的 AI 毛絨玩具)也在這個賽道,但融資新聞是 2023 年的舊聞,就沒放進表格了",
+    "funding": "",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1784218779063,
+    "date": "2026-07"
+  },
+  {
     "id": 1780600000001,
     "name": "Flourish",
     "source": "TechTimes",
@@ -280,22 +408,6 @@
     "desc": "AI 原生醫療財務管理，鎖定帳務與保險請款",
     "notes": "Healthcare billing 是美國最複雜流程之一，切入點精準",
     "funding": "$27M Series A",
-    "signal": 3,
-    "aiScore": null,
-    "relevance": [
-      "5"
-    ],
-    "date": "2026-06"
-  },
-  {
-    "id": 1780488669161,
-    "name": "Manifest",
-    "source": "Crunchbase",
-    "category": "decision",
-    "url": "https://www.pymnts.com/news/investment-tracker/2026/manifest-raises-60-million-in-record-legal-ai-funding-round/",
-    "desc": "AI 原生律所,自家 AI+集中後台,按結果收費",
-    "notes": "把「服務即軟體」做到開整間律所,最徹底",
-    "funding": "$60M Series A / $750M",
     "signal": 3,
     "aiScore": null,
     "relevance": [
