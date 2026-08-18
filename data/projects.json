@@ -1,5 +1,166 @@
 [
   {
+    "name": "June",
+    "source": "TechCrunch",
+    "category": "decision",
+    "url": "https://techcrunch.com/2026/08/03/a-marc-benioff-backed-startup-thinks-ai-can-solve-the-ai-deployment-problem/",
+    "desc": "掃描企業現有系統找瓶頸並自動生成 agent 導入流程與指南",
+    "notes": "Benioff/Dell/Levie/Kurtz 背書；切入「AI 導入」這個 forward-deployed engineer 痛點",
+    "funding": "$20M pre-seed (2026-08)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "id": 1787042354299,
+    "date": "2026-08"
+  },
+  {
+    "name": "Ellis AI",
+    "source": "TechCrunch",
+    "category": "decision",
+    "url": "https://techcrunch.com/2026/07/31/repeat-founder-ryan-williams-raises-10m-seed-for-an-ai-startup-for-private-credit-managers/",
+    "desc": "為私募信貸經理做 agent，整理文件/試算表/往來信件",
+    "notes": "Cadre 共同創辦人 Ryan Williams 二次創業；垂直金融流程切入",
+    "funding": "$10M seed (2026-07-31)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "id": 1787042354300,
+    "date": "2026-08"
+  },
+  {
+    "name": "Zenity",
+    "source": "StartupHub.ai",
+    "category": "infra",
+    "url": "https://www.startuphub.ai/ai-news/ai-news/2026/ai-agent-security-hadrian-defense-week-august-2026",
+    "desc": "企業 AI agent 的治理與安全",
+    "notes": "Unit 8200 出身、Gartner 領先者；押注「十億 agent 時代」治理需求",
+    "funding": "$125M Series C (2026-08)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1787042354301,
+    "date": "2026-08"
+  },
+  {
+    "name": "Obsidian Security",
+    "source": "StartupHub.ai",
+    "category": "infra",
+    "url": "https://www.startuphub.ai/ai-news/ai-news/2026/ai-agent-security-hadrian-defense-week-august-2026",
+    "desc": "雲端應用中 AI agent 的非人身分（NHI）治理",
+    "notes": "AI agent 爆量後「身分/權限」是剛需痛點",
+    "funding": "$85M Series D, 估值 $1.1B (2026-08)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1787042354302,
+    "date": "2026-08"
+  },
+  {
+    "name": "Oligo Security",
+    "source": "StartupHub.ai",
+    "category": "infra",
+    "url": "https://www.startuphub.ai/ai-news/ai-news/2026/ai-agent-security-hadrian-defense-week-august-2026",
+    "desc": "AI agent 的 runtime 安全",
+    "notes": "AWS Security Hub 供應商；補 runtime 這一層",
+    "funding": "$60M (2026-08)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1787042354303,
+    "date": "2026-08"
+  },
+  {
+    "name": "Hadrian",
+    "source": "StartupHub.ai",
+    "category": "infra",
+    "url": "https://www.startuphub.ai/ai-news/ai-news/2026/ai-agent-security-hadrian-defense-week-august-2026",
+    "desc": "自動化國防製造工廠",
+    "notes": "真實產能護城河（四廠、近300萬平方英尺），非純軟體",
+    "funding": "$1.37B Series D, 估值 $7.87B (2026-08)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1787042354304,
+    "date": "2026-08"
+  },
+  {
+    "name": "Windborne Systems",
+    "source": "StartupHub.ai",
+    "category": "data",
+    "url": "https://www.startuphub.ai/ai-news/ai-news/2026/ai-agent-security-hadrian-defense-week-august-2026",
+    "desc": "高空氣球採集資料做 AI 天氣預測",
+    "notes": "獨特一手資料來源＝資料護城河",
+    "funding": "$37M Series B (2026-08)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1787042354305,
+    "date": "2026-08"
+  },
+  {
+    "name": "RWX",
+    "source": "StartupHub.ai",
+    "category": "infra",
+    "url": "https://www.startuphub.ai/ai-news/ai-news/2026/ai-agent-security-hadrian-defense-week-august-2026",
+    "desc": "給 AI 生成程式碼用的開發雲（CI/沙盒）",
+    "notes": "「AI 寫碼」爆量後的配套基礎設施",
+    "funding": "$12M Series A (2026-08)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1787042354306,
+    "date": "2026-08"
+  },
+  {
+    "name": "Wild Zebra",
+    "source": "GeekWire",
+    "category": "edu",
+    "url": "https://www.geekwire.com/2026/this-startup-just-raised-6m-for-an-ai-tutor-that-helps-kids-figure-it-out-themselves/",
+    "desc": "數學/閱讀 AI 學習平台",
+    "notes": "主打能對抗大廠免費工具的垂直專用定位",
+    "funding": "$6M (2026-08-06)",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "2"
+    ],
+    "id": 1787042354307,
+    "date": "2026-08"
+  },
+  {
+    "name": "Framer",
+    "source": "Product Hunt",
+    "category": "tool",
+    "url": "https://www.framer.com",
+    "desc": "畫布上的 agent，可接 Claude Code/Codex 協作設計",
+    "notes": "設計工具往 agent 化；生態開放接外部 AI\n來源: https://www.producthunt.com/leaderboard/weekly/2026/33",
+    "funding": "",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1787042354308,
+    "date": "2026-08"
+  },
+  {
+    "name": "Halo by Scam AI",
+    "source": "Product Hunt",
+    "category": "tool",
+    "url": "https://www.producthunt.com/leaderboard/weekly/2026/33",
+    "desc": "偵測視訊會議參與者是真人或合成假冒",
+    "notes": "deepfake 防詐，切遠端會議信任問題",
+    "funding": "",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "id": 1787042354309,
+    "date": "2026-08"
+  },
+  {
+    "id": 1784218779056,
     "name": "Bondu",
     "source": "GamesBeat",
     "category": "edu",
@@ -12,10 +173,10 @@
     "relevance": [
       "2"
     ],
-    "id": 1784218779056,
     "date": "2026-07"
   },
   {
+    "id": 1784218779057,
     "name": "Haivivi 跃然创新",
     "source": "TMTPost/36Kr",
     "category": "edu",
@@ -28,10 +189,10 @@
     "relevance": [
       "2"
     ],
-    "id": 1784218779057,
     "date": "2026-07"
   },
   {
+    "id": 1784218779058,
     "name": "FoloToy",
     "source": "36Kr",
     "category": "edu",
@@ -44,10 +205,10 @@
     "relevance": [
       "2"
     ],
-    "id": 1784218779058,
     "date": "2026-07"
   },
   {
+    "id": 1784218779059,
     "name": "Ello",
     "source": "EdTech Chronicle",
     "category": "edu",
@@ -60,10 +221,10 @@
     "relevance": [
       "2"
     ],
-    "id": 1784218779059,
     "date": "2026-07"
   },
   {
+    "id": 1784218779060,
     "name": "Heeyo",
     "source": "TechCrunch",
     "category": "edu",
@@ -76,10 +237,10 @@
     "relevance": [
       "2"
     ],
-    "id": 1784218779060,
     "date": "2026-07"
   },
   {
+    "id": 1784218779061,
     "name": "Gizmo",
     "source": "TechCrunch",
     "category": "edu",
@@ -92,10 +253,10 @@
     "relevance": [
       "2"
     ],
-    "id": 1784218779061,
     "date": "2026-07"
   },
   {
+    "id": 1784218779062,
     "name": "Wizzer",
     "source": "VCBacked",
     "category": "edu",
@@ -108,10 +269,10 @@
     "relevance": [
       "2"
     ],
-    "id": 1784218779062,
     "date": "2026-07"
   },
   {
+    "id": 1784218779063,
     "name": "PeacePath",
     "source": "產業評測",
     "category": "edu",
@@ -124,7 +285,6 @@
     "relevance": [
       "2"
     ],
-    "id": 1784218779063,
     "date": "2026-07"
   },
   {
