@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { Project } from '../types';
-import { CAT_COLORS, CAT_LABELS, TAG_CLASS } from '../constants';
+import { CAT_COLORS, CAT_LABELS, SIGNAL_TYPE_META, TAG_CLASS } from '../constants';
 import { LinkIcon } from './LinkIcon';
 
 interface ProjectCardProps {
@@ -10,6 +10,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project: p, onOpen }: ProjectCardProps) {
   const color = CAT_COLORS[p.category] || '#8a8778';
+  const meta = SIGNAL_TYPE_META[p.signalType ?? 'funding'];
   const scoreColor =
     p.aiScore != null && p.aiScore >= 80
       ? '#1a7a4a'
@@ -34,7 +35,7 @@ export function ProjectCard({ project: p, onOpen }: ProjectCardProps) {
         <div style={{ minWidth: 0 }}>
           <div className="proj-name">{p.name}</div>
           <div className="proj-meta">
-            {(p.funding || '融資未知') + ' · ' + (p.date || '—')}
+            {`${meta.icon} ${p.funding || meta.blank} · ${p.date || '—'}`}
           </div>
         </div>
         {p.url && (

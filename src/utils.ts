@@ -1,4 +1,4 @@
-import type { Category, FilterKey, ParsedProject, Project } from './types';
+import type { Category, FilterKey, ParsedProject, Project, SignalType } from './types';
 
 /** 依篩選條件過濾項目（對應原 filterProjects） */
 export function filterProjects(list: Project[], filter: FilterKey): Project[] {
@@ -10,6 +10,8 @@ export function filterProjects(list: Project[], filter: FilterKey): Project[] {
     return list.filter((p) => p.category === 'decision' || p.relevance.includes('5'));
   if (filter === 'infra')
     return list.filter((p) => p.category === 'infra' || p.category === 'data');
+  if (filter === 'traction')
+    return list.filter((p) => p.signalType === 'oss' || p.signalType === 'product');
   return list;
 }
 
@@ -42,6 +44,17 @@ export function buildInsight(list: Project[]): string {
   return text;
 }
 
+// ── 訊號軸推導 ───────────────────────────────────────────
+const VALID_SIGNAL_TYPES: SignalType[] = ['funding', 'oss', 'product'];
+
+/** 由來源平台字串推導訊號軸（GitHub Trending → oss、Product Hunt → product、其餘 → funding） */
+export function deriveSignalType(source: string): SignalType {
+  const s = source.toLowerCase();
+  if (/github/.test(s)) return 'oss';
+  if (/product\s*hunt/.test(s)) return 'product';
+  return 'funding';
+}
+
 // ── JSON 備份還原 ────────────────────────────────────────
 const VALID_CATEGORIES: Category[] = ['edu', 'decision', 'infra', 'data', 'health', 'tool', 'other'];
 
@@ -61,11 +74,15 @@ export function sanitizeImportedProjects(data: unknown): Project[] {
 
     const signalNum = Number(o.signal);
     const aiNum = Number(o.aiScore);
+    const source = typeof o.source === 'string' && o.source ? o.source : '其他';
+    const signalType = VALID_SIGNAL_TYPES.includes(o.signalType as SignalType)
+      ? (o.signalType as SignalType)
+      : deriveSignalType(source);
 
     out.push({
       id: typeof o.id === 'number' ? o.id : 0, // 0 = 待 App 重新指派
       name,
-      source: typeof o.source === 'string' && o.source ? o.source : '其他',
+      source,
       category: VALID_CATEGORIES.includes(o.category as Category) ? (o.category as Category) : 'other',
       url: typeof o.url === 'string' && o.url ? o.url : null,
       desc: typeof o.desc === 'string' ? o.desc : '',
@@ -77,6 +94,7 @@ export function sanitizeImportedProjects(data: unknown): Project[] {
         ? o.relevance.filter((r): r is string => typeof r === 'string')
         : [],
       date: typeof o.date === 'string' ? o.date : '',
+      signalType,
     });
   }
   return out;
@@ -171,9 +189,10 @@ export function parseImportText(text: string): { items: ParsedProject[]; errors:
     if (category === 'edu') relevance.push('2');
     if (category === 'decision' || category === 'health') relevance.push('5');
 
+    const resolvedSource = source || '其他';
     items.push({
       name,
-      source: source || '其他',
+      source: resolvedSource,
       category,
       url,
       desc: isBlank(desc) ? '' : desc,
@@ -182,6 +201,7 @@ export function parseImportText(text: string): { items: ParsedProject[]; errors:
       signal: 3,
       aiScore: null,
       relevance,
+      signalType: deriveSignalType(resolvedSource),
     });
   }
 

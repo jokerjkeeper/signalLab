@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import type { ChangeEvent } from 'react';
-import type { FilterKey, ParsedProject, Project } from './types';
+import type { Category, FilterKey, ParsedProject, Project } from './types';
 import { useProjectStore } from './hooks/useProjectStore';
 import { buildInsight, deriveStats, filterProjects, sanitizeImportedProjects } from './utils';
 import { Header } from './components/Header';
@@ -14,12 +14,25 @@ import { ImportModal } from './components/ImportModal';
 export default function App() {
   const [projects, setProjects, store] = useProjectStore();
   const [filter, setFilter] = useState<FilterKey>('all');
+  const [sourceFilter, setSourceFilter] = useState<string>('all');
+  const [categoryFilter, setCategoryFilter] = useState<Category | 'all'>('all');
   const [detailId, setDetailId] = useState<number | null>(null);
   const [addOpen, setAddOpen] = useState(false);
   const [importOpen, setImportOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const filtered = useMemo(() => filterProjects(projects, filter), [projects, filter]);
+  // 資料中出現過的來源，去重後依字母排序（動態填入下拉選單）
+  const sources = useMemo(
+    () => Array.from(new Set(projects.map((p) => p.source).filter(Boolean))).sort((a, b) => a.localeCompare(b)),
+    [projects],
+  );
+
+  const filtered = useMemo(() => {
+    let list = filterProjects(projects, filter);
+    if (sourceFilter !== 'all') list = list.filter((p) => p.source === sourceFilter);
+    if (categoryFilter !== 'all') list = list.filter((p) => p.category === categoryFilter);
+    return list;
+  }, [projects, filter, sourceFilter, categoryFilter]);
   const stats = useMemo(() => deriveStats(projects), [projects]);
   const insight = useMemo(() => buildInsight(projects), [projects]);
 
@@ -137,6 +150,11 @@ export default function App() {
         <Controls
           filter={filter}
           onFilter={setFilter}
+          sources={sources}
+          sourceFilter={sourceFilter}
+          onSourceFilter={setSourceFilter}
+          categoryFilter={categoryFilter}
+          onCategoryFilter={setCategoryFilter}
           onAdd={() => setAddOpen(true)}
           onImport={() => setImportOpen(true)}
           onExport={exportBackup}

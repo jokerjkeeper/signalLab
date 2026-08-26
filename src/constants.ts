@@ -1,4 +1,4 @@
-import type { Category, Project } from './types';
+import type { Category, Project, SignalType } from './types';
 
 /** 類別 → 左側色條 / score 預設色 */
 export const CAT_COLORS: Record<Category, string> = {
@@ -31,6 +31,13 @@ export const TAG_CLASS: Record<Category, string> = {
   health: 'tag-health',
   tool: 'tag-tool',
   other: 'tag-tool',
+};
+
+/** 訊號軸 → 顯示 icon / 指標標籤 / 指標缺值時的 fallback 文案 */
+export const SIGNAL_TYPE_META: Record<SignalType, { icon: string; metricLabel: string; blank: string }> = {
+  funding: { icon: '💰', metricLabel: '融資', blank: '融資未知' },
+  oss: { icon: '⭐', metricLabel: 'star/day', blank: 'star 未知' },
+  product: { icon: '▲', metricLabel: 'upvotes', blank: 'upvote 未知' },
 };
 
 /** localStorage 鍵名 */

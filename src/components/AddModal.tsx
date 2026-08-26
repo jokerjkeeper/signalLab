@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { Category, Project, ProjectFormValues } from '../types';
+import { deriveSignalType } from '../utils';
 import { Modal } from './Modal';
 
 interface AddModalProps {
@@ -19,7 +20,7 @@ const EMPTY_FORM: ProjectFormValues = {
   signal: 3,
 };
 
-const SOURCES = ['YC', 'Product Hunt', 'Kickstarter', 'Indiegogo', 'Crunchbase', 'Twitter/X', '其他'];
+const SOURCES = ['YC', 'GitHub Trending', 'Product Hunt', 'Kickstarter', 'Indiegogo', 'Crunchbase', 'Twitter/X', '其他'];
 
 const CATEGORIES: { value: Category; label: string }[] = [
   { value: 'edu', label: '教育 / 培訓' },
@@ -67,6 +68,7 @@ export function AddModal({ open, onClose, onAdd }: AddModalProps) {
       aiScore: null,
       relevance,
       date: new Date().toISOString().slice(0, 7),
+      signalType: deriveSignalType(form.source),
     };
 
     onAdd(project);
@@ -150,10 +152,10 @@ export function AddModal({ open, onClose, onAdd }: AddModalProps) {
 
       <div className="form-row">
         <div className="form-group">
-          <label className="form-label">融資規模 / 眾籌金額</label>
+          <label className="form-label">主打指標（融資 / ⭐star/day / ▲upvotes）</label>
           <input
             className="form-input"
-            placeholder="e.g. $3M Seed"
+            placeholder="e.g. $3M Seed、⭐ 800/day、▲ 320"
             value={form.funding}
             onChange={(e) => update('funding', e.target.value)}
           />

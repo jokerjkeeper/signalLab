@@ -1,4 +1,5 @@
 import type { Project } from '../types';
+import { SIGNAL_TYPE_META } from '../constants';
 import { Modal } from './Modal';
 import { LinkIcon } from './LinkIcon';
 
@@ -18,7 +19,7 @@ export function DetailModal({ project, onClose, onDelete }: DetailModalProps) {
           <h2>{project.name}</h2>
           <div className="modal-meta">
             {`${project.source} · ${project.category} · ${
-              project.funding || '融資未知'
+              project.funding || SIGNAL_TYPE_META[project.signalType ?? 'funding'].blank
             } · ${project.date || ''}`}
           </div>
 

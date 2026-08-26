@@ -13,10 +13,14 @@ interface ImportModalProps {
   onImport: (items: ParsedProject[]) => void;
 }
 
-const PLACEHOLDER = `貼上 signal-scan 的 pipe 格式結果（表頭、--- 分隔線、換行的網址都會自動處理）：
+const PLACEHOLDER = `貼上 signal-scan / traction-scan 的 pipe 格式結果（表頭、--- 分隔線、換行的網址都會自動處理）：
 
-名稱 | 來源平台 | 類別 | 官網 | 募資 | 描述 | 為何值得追 | 來源連結
-Manifest | Crunchbase | decision | 未知 | $60M Series A | AI 原生律所 | 服務即軟體 | https://...`;
+名稱 | 來源平台 | 類別 | 官網 | 募資/指標 | 描述 | 為何值得追 | 來源連結
+Manifest | Crunchbase | decision | 未知 | $60M Series A | AI 原生律所 | 服務即軟體 | https://...
+foo/bar | GitHub Trending | infra | https://... | ⭐ 813/day | 本地優先 agent 工作區 | 非套殼、真實用途 | https://github.com/...
+Arena AI | Product Hunt | tool | https://... | ▲ 320 | 從想法到出貨的 agent | 切入實際工作流 | https://...
+
+（來源平台含 GitHub → 標為 OSS 牽引力、含 Product Hunt → 產品牽引力，會自動歸到「🔥 牽引力」）`;
 
 function dot(color: string): ReactNode {
   return (

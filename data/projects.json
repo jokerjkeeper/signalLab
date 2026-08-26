@@ -1,5 +1,83 @@
 [
   {
+    "name": "apache/maka",
+    "source": "GitHub Trending",
+    "category": "infra",
+    "url": "https://github.com/apache/maka",
+    "desc": "本地優先的 AI agent 工作區，append-only 事件日誌",
+    "notes": "Apache 背書、有實質架構、非套殼",
+    "funding": "⭐ 543/day",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "signalType": "oss",
+    "id": 1787739365307,
+    "date": "2026-08"
+  },
+  {
+    "name": "TauricResearch/TradingAgents",
+    "source": "GitHub Trending",
+    "category": "decision",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "desc": "多 agent LLM 金融交易框架",
+    "notes": "垂直金融決策、累積 10 萬星仍在漲",
+    "funding": "⭐ 218/day",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [
+      "5"
+    ],
+    "signalType": "oss",
+    "id": 1787739365308,
+    "date": "2026-08"
+  },
+  {
+    "name": "marin-community/marin",
+    "source": "GitHub Trending",
+    "category": "infra",
+    "url": "https://github.com/marin-community/marin",
+    "desc": "開源基礎模型研究框架",
+    "notes": "押開放 foundation model、有社群",
+    "funding": "⭐ 231/day",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "signalType": "oss",
+    "id": 1787739365309,
+    "date": "2026-08"
+  },
+  {
+    "name": "tinyhumansai/openhuman",
+    "source": "GitHub Trending",
+    "category": "infra",
+    "url": "https://github.com/tinyhumansai/openhuman",
+    "desc": "本地記憶 + agent 編排的個人 AI 系統(Rust)",
+    "notes": "熱度高但命名 hype、實質待驗證",
+    "funding": "⭐ 542/day",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "signalType": "oss",
+    "id": 1787739365310,
+    "date": "2026-08"
+  },
+  {
+    "name": "asciimoo/hister",
+    "source": "GitHub Trending",
+    "category": "tool",
+    "url": "https://github.com/asciimoo/hister",
+    "desc": "個人化搜尋引擎(Go)",
+    "notes": "作者是 SearXNG 原作者、可信度高",
+    "funding": "⭐ 98/day",
+    "signal": 3,
+    "aiScore": null,
+    "relevance": [],
+    "signalType": "oss",
+    "id": 1787739365311,
+    "date": "2026-08"
+  },
+  {
+    "id": 1787042354299,
     "name": "June",
     "source": "TechCrunch",
     "category": "decision",
@@ -12,10 +90,11 @@
     "relevance": [
       "5"
     ],
-    "id": 1787042354299,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "funding"
   },
   {
+    "id": 1787042354300,
     "name": "Ellis AI",
     "source": "TechCrunch",
     "category": "decision",
@@ -28,10 +107,11 @@
     "relevance": [
       "5"
     ],
-    "id": 1787042354300,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "funding"
   },
   {
+    "id": 1787042354301,
     "name": "Zenity",
     "source": "StartupHub.ai",
     "category": "infra",
@@ -42,10 +122,11 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "id": 1787042354301,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "funding"
   },
   {
+    "id": 1787042354302,
     "name": "Obsidian Security",
     "source": "StartupHub.ai",
     "category": "infra",
@@ -56,10 +137,11 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "id": 1787042354302,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "funding"
   },
   {
+    "id": 1787042354303,
     "name": "Oligo Security",
     "source": "StartupHub.ai",
     "category": "infra",
@@ -70,10 +152,11 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "id": 1787042354303,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "funding"
   },
   {
+    "id": 1787042354304,
     "name": "Hadrian",
     "source": "StartupHub.ai",
     "category": "infra",
@@ -84,10 +167,11 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "id": 1787042354304,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "funding"
   },
   {
+    "id": 1787042354305,
     "name": "Windborne Systems",
     "source": "StartupHub.ai",
     "category": "data",
@@ -98,10 +182,11 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "id": 1787042354305,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "funding"
   },
   {
+    "id": 1787042354306,
     "name": "RWX",
     "source": "StartupHub.ai",
     "category": "infra",
@@ -112,10 +197,11 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "id": 1787042354306,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "funding"
   },
   {
+    "id": 1787042354307,
     "name": "Wild Zebra",
     "source": "GeekWire",
     "category": "edu",
@@ -128,10 +214,11 @@
     "relevance": [
       "2"
     ],
-    "id": 1787042354307,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "funding"
   },
   {
+    "id": 1787042354308,
     "name": "Framer",
     "source": "Product Hunt",
     "category": "tool",
@@ -142,10 +229,11 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "id": 1787042354308,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "product"
   },
   {
+    "id": 1787042354309,
     "name": "Halo by Scam AI",
     "source": "Product Hunt",
     "category": "tool",
@@ -156,8 +244,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "id": 1787042354309,
-    "date": "2026-08"
+    "date": "2026-08",
+    "signalType": "product"
   },
   {
     "id": 1784218779056,
@@ -173,7 +261,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2026-07"
+    "date": "2026-07",
+    "signalType": "funding"
   },
   {
     "id": 1784218779057,
@@ -189,7 +278,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2026-07"
+    "date": "2026-07",
+    "signalType": "funding"
   },
   {
     "id": 1784218779058,
@@ -205,7 +295,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2026-07"
+    "date": "2026-07",
+    "signalType": "funding"
   },
   {
     "id": 1784218779059,
@@ -221,7 +312,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2026-07"
+    "date": "2026-07",
+    "signalType": "funding"
   },
   {
     "id": 1784218779060,
@@ -237,7 +329,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2026-07"
+    "date": "2026-07",
+    "signalType": "funding"
   },
   {
     "id": 1784218779061,
@@ -253,7 +346,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2026-07"
+    "date": "2026-07",
+    "signalType": "funding"
   },
   {
     "id": 1784218779062,
@@ -269,7 +363,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2026-07"
+    "date": "2026-07",
+    "signalType": "funding"
   },
   {
     "id": 1784218779063,
@@ -285,7 +380,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2026-07"
+    "date": "2026-07",
+    "signalType": "funding"
   },
   {
     "id": 1780600000001,
@@ -299,7 +395,8 @@
     "signal": 4,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780600000002,
@@ -313,7 +410,8 @@
     "signal": 4,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780600000003,
@@ -327,7 +425,8 @@
     "signal": 4,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780600000004,
@@ -341,7 +440,8 @@
     "signal": 4,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780600000005,
@@ -355,7 +455,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780600000006,
@@ -369,7 +470,8 @@
     "signal": 4,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780600000007,
@@ -383,7 +485,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780600000008,
@@ -397,7 +500,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780600000009,
@@ -413,7 +517,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639652,
@@ -427,7 +532,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639653,
@@ -441,7 +547,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639654,
@@ -455,7 +562,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639655,
@@ -471,7 +579,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639656,
@@ -487,7 +596,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639657,
@@ -501,7 +611,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639658,
@@ -515,7 +626,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639659,
@@ -529,7 +641,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639660,
@@ -543,7 +656,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639661,
@@ -557,7 +671,8 @@
     "signal": 3,
     "aiScore": null,
     "relevance": [],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780502639662,
@@ -573,7 +688,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780488669162,
@@ -589,7 +705,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780488669163,
@@ -605,7 +722,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780488669164,
@@ -621,7 +739,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780488669165,
@@ -637,7 +756,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780488669166,
@@ -653,7 +773,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1780488669167,
@@ -669,7 +790,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2026-06"
+    "date": "2026-06",
+    "signalType": "funding"
   },
   {
     "id": 1,
@@ -685,7 +807,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2025-05"
+    "date": "2025-05",
+    "signalType": "funding"
   },
   {
     "id": 2,
@@ -701,7 +824,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2025-04"
+    "date": "2025-04",
+    "signalType": "funding"
   },
   {
     "id": 3,
@@ -715,7 +839,8 @@
     "signal": 4,
     "aiScore": 72,
     "relevance": [],
-    "date": "2025-03"
+    "date": "2025-03",
+    "signalType": "funding"
   },
   {
     "id": 4,
@@ -731,7 +856,8 @@
     "relevance": [
       "2"
     ],
-    "date": "2025-02"
+    "date": "2025-02",
+    "signalType": "product"
   },
   {
     "id": 5,
@@ -747,7 +873,8 @@
     "relevance": [
       "5"
     ],
-    "date": "2025-05"
+    "date": "2025-05",
+    "signalType": "funding"
   },
   {
     "id": 6,
@@ -763,6 +890,7 @@
     "relevance": [
       "2"
     ],
-    "date": "2025-01"
+    "date": "2025-01",
+    "signalType": "funding"
   }
 ]
